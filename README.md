@@ -4,17 +4,18 @@
 ```
   src (a.k.a @) : vue 프로젝트
   ├ assets :
-    ├ images : jpg, png, etc
-    ├ stylesheets : css, scss, sass, etc
-
+  |  ├ images : jpg, png, etc
+  |  ├ stylesheets : css, scss, sass, etc
+  |
   ├ shared_components
   ├ routes
   ├ spa : (single page app) vue file
   |  ├ home
-  |  | ├ components
-  |  |  HomeView.vue
+  |  |  ├ HomeView.vue
+  |  |  ⌊ components
   |  ├ about
-  |  | ├ components  
+  |  |  ├ AboutView.vue
+  |  |  ⌊ components  
   ├ store
   ...
   
