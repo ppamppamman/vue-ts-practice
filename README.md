@@ -12,6 +12,7 @@
   ├ spa : (single page app) vue file
   |  ├ home
   |  | ├ components
+  |  |  HomeView.vue
   |  ├ about
   |  | ├ components  
   ├ store
