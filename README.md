@@ -1,5 +1,25 @@
 # practice_lab
 
+프로젝트 구조는 아래와 같다.
+```
+  src (a.k.a @) : vue 프로젝트
+  ├ assets :
+    ├ images : jpg, png, etc
+    ├ stylesheets : css, scss, sass, etc
+
+  ├ shared_components
+  ├ routes
+  ├ spa : (single page app) vue file
+  |  ├ home
+  |  | ├ components
+  |  ├ about
+  |  | ├ components  
+  ├ store
+  ...
+  
+```
+
+
 ## Project setup
 ```
 yarn install
