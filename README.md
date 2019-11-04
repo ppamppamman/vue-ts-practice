@@ -8,15 +8,26 @@
   |  ├ stylesheets : css, scss, sass, etc
   |
   ├ shared_components
+  |
   ├ routes
+  |
+  ├ config
+  |  ├ prod.env.js
+  |  ├ dev.env.js : prod.env를 상속
+  |  ⌊ test.env.js : dev.env를 상속
+  |
   ├ spa : (single page app) vue file
   |  ├ home
   |  |  ├ HomeView.vue
   |  |  ⌊ components
+  |  |
   |  ├ about
   |  |  ├ AboutView.vue
   |  |  ⌊ components  
-  ├ store
+  |  |
+  |  
+  ├ store : vuex 상태관리
+  
   ...
   
 ```

@@ -1,20 +1,24 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../../assets/images/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloWorld msg="테스트 Vue app입니다" />
+    <HelloBootstrap />
+    <RecommendQuiz />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/spa/home/components/HelloWorld.vue";
-import Game from "@/spa/game/components/Game.vue";
+import HelloBootstrap from "@/spa/home/components/HelloBootstrap.vue";
+import RecommendQuiz from "@/spa/home/components/RecommendQuiz.vue";
 
 export default {
   name: "home_view",
   components: {
-    HelloWorld
+    HelloWorld,
+    HelloBootstrap,
+    RecommendQuiz
   }
 };
-
 </script>
