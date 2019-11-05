@@ -15,14 +15,14 @@
                   <b-row no-gutters>
                     <b-col >
                       <b-button 
-                        href="/:quiz_id" 
+                        v-bind:href="{{ quiz_id }}/show" 
                         size="sm" 
                         variant="outline-primary"> 시작
                       </b-button>
                     </b-col>
                     <b-col >
                       <b-button 
-                        href="/:quiz_id"
+                        href="/{{ quiz_id }}/share"
                         size="sm" 
                         variant="outline-success"> 공유
                       </b-button>

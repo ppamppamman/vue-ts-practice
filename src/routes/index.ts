@@ -24,6 +24,13 @@ function loadViewComponent(filename: string) {
     );
 }
 
+function loadInternalComponent(directory: string, filename: string) {
+  return () =>
+    import(
+      /* webpackChunkName: "view-[request]" */ `@/spa/${directory}/components/${filename}.vue`
+    );
+}
+
 function filenameToDirectrory(filename: string){
   let result: string = filename.replace( /([A-Z])/g, " $1" ).split(' ').join('_').toLowerCase().replace("view", "");
   if (result[0] == "_") {
@@ -46,18 +53,30 @@ const routes = [
   {
     path: "/quiz",
     name: "quiz_view",
-    component: loadViewComponent("QuizView")
+    component: loadViewComponent("QuizView"),
+    children: [
+      {
+        path: "/",
+        name: "quiz_list",
+        component: loadInternalComponent("quiz", "QuizList")
+      },
+      {
+        path: ":id/show",
+        name: "quiz_id_show",
+        component: loadInternalComponent("quiz", "QuizShow")
+      },
+      {
+        path: ":id/share",
+        name: "quiz_id_share",
+        component: loadInternalComponent("quiz", "QuizShare")
+      }
+    ]
   },
   {
     path: "/quiz_create",
     name: "quiz_create_view",
     component: loadViewComponent("QuizCreateView")
   },
-  {
-    path: "/game/:id",
-    name: "game_id_view",
-    component: loadViewComponent("GameView")
-  }
   // redirect 가능 { path: '/', redirect: '/about', ... }
 ];
 
