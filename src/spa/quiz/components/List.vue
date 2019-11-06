@@ -14,18 +14,18 @@
                 <div>
                   <b-row no-gutters>
                     <b-col >
-                      <b-button 
-                        v-bind:href="{{ quiz_id }}/show" 
-                        size="sm" 
-                        variant="outline-primary"> 시작
-                      </b-button>
+                      <router-link :to="{path:'/'+quiz.id+'/show'}">
+                        <b-button size="sm" variant="outline-primary">
+                          시작
+                        </b-button>
+                      </router-link>
                     </b-col>
                     <b-col >
-                      <b-button 
-                        href="/{{ quiz_id }}/share"
-                        size="sm" 
-                        variant="outline-success"> 공유
-                      </b-button>
+                      <router-link :to="{path:'/'+quiz.id+'/share'}">
+                        <b-button size="sm" variant="outline-success">
+                          공유
+                        </b-button>
+                      </router-link>
                     </b-col>
                   </b-row>
                 </div>

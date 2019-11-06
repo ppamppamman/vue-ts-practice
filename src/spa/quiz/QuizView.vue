@@ -15,15 +15,13 @@
 <script>
 // @ is an alias to /src
 //import QuizList from "@/spa/quiz/components/QuizList.vue";
-//import QuizShow from "@/spa/quiz/components/QuizShow.vue";
 
 export default {
   name: "quiz_view",
   components: {
     //QuizList,
   },
-  data:{
-    quiz_id: "asdf"
-  }
+  // data:{ 
+  // }
 };
 </script>

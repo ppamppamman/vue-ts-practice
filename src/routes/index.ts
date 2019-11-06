@@ -24,10 +24,10 @@ function loadViewComponent(filename: string) {
     );
 }
 
-function loadInternalComponent(directory: string, filename: string) {
+function loadChildComponent(directory: string, filename: string) {
   return () =>
     import(
-      /* webpackChunkName: "view-[request]" */ `@/spa/${directory}/components/${filename}.vue`
+      /* webpackChunkName: "view-[request]" */ `@/spa/${directory}/${filename}.vue`
     );
 }
 
@@ -57,21 +57,27 @@ const routes = [
     children: [
       {
         path: "/",
-        name: "quiz_list",
-        component: loadInternalComponent("quiz", "QuizList")
+        name: "list",
+        component: loadChildComponent("quiz/components", "List")
       },
       {
-        path: ":id/show",
+        path: "random/:quizId/show",
+        name: "random_show",
+        component: loadChildComponent("quiz/random_quiz", "Show")
+      },
+      {
+        path: "ideal/:quizId/show",
         name: "quiz_id_show",
-        component: loadInternalComponent("quiz", "QuizShow")
+        component: loadChildComponent("quiz/ideal_quiz", "Show")
       },
       {
-        path: ":id/share",
-        name: "quiz_id_share",
-        component: loadInternalComponent("quiz", "QuizShare")
-      }
+        path: "similar/:quizId/show",
+        name: "quiz_id_show",
+        component: loadChildComponent("quiz/similar_quiz", "Show")
+      },
     ]
   },
+  
   {
     path: "/quiz_create",
     name: "quiz_create_view",
